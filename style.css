@@ -1,0 +1,78 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+#image{  
+    background-color: #504074;
+    padding-bottom: 50px;
+    height: 35px;
+}
+main{
+    background-color:#7E69AC;
+    height: 900px;
+    width: 100%;
+}
+footer{
+    background-color:#ede9e3;
+    height: 200px;
+    width: 100%;
+}
+h1{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #504074;
+}
+h2{
+    font-family: Arial, Helvetica, sans-serif; 
+    margin-left: 25px;  
+}
+
+#ovo{
+    height: 40px;
+    margin-bottom: 20px;
+    
+}
+#logo{
+    margin-left: 450px;
+    height: 80px;
+    width: 220px;
+    margin-top: -40px;
+    margin-top: 10px;
+}
+#carrinho{
+    height: 40px;
+    float: right;
+    margin-right: 10px;
+    margin-top: 25px;
+}
+.caixa{
+    width: 230px;
+    height: 350px;
+    margin-top: 40px;
+    margin-left: 70px;
+    background-color: #504074;
+    float: left;
+    display: block;
+    border-radius: 5%;
+    
+}
+#ftOvo{
+    width: 90%;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 15%;
+
+}
+button{
+    margin-left: 20px;
+    margin-top: 10px;
+    height: 40px;
+    width: 200px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+button:hover{
+    background-color: greenyellow;
+
+}
+
