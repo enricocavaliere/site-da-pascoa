@@ -1,6 +1,6 @@
 *{
     margin: 0%;
-    padding: 0%;
+    padding: 0%;    
 }
 #image{  
     background-color: #504074;
@@ -14,7 +14,7 @@ main{
 }
 footer{
     background-color:#ede9e3;
-    height: 200px;
+    height: 230px;
     width: 100%;
 }
 h1{
@@ -23,12 +23,39 @@ h1{
     color: #504074;
 }
 h2{
-    font-family: Arial, Helvetica, sans-serif; 
-    margin-left: 25px;  
+    font-family:'Times New Roman', Times, serif;
+    color:white;
+    font-size: 20px; 
+    margin-bottom: 9px;
+    text-align: center;
+}
+h3{
+    text-align: right;
+    margin-right: 30px;
+    color: #504074;
+}
+ul{
+    float: left;
+    margin-left: 200px;
+}
+ul li{   
+    list-style: none;
+    margin-top: 5px;
 }
 
-#ovo{
-    height: 40px;
+.title{
+    font-weight: bold;
+    font-size: 20px;
+}
+p{
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+#pesquisa{
+    height: 50px;
     margin-bottom: 20px;
     
 }
@@ -39,11 +66,16 @@ h2{
     margin-top: -40px;
     margin-top: 10px;
 }
+
 #carrinho{
     height: 40px;
     float: right;
     margin-right: 10px;
     margin-top: 25px;
+}
+#vcs{
+    width: 300px;
+    margin-left: 100px;
 }
 .caixa{
     width: 230px;
@@ -54,13 +86,14 @@ h2{
     float: left;
     display: block;
     border-radius: 5%;
-    
+    align-items: center;
 }
 #ftOvo{
     width: 90%;
+    height: 200px;
     margin-left: 10px;
     margin-top: 10px;
-    border-radius: 15%;
+    border-radius: 5%;
 
 }
 button{
@@ -70,9 +103,12 @@ button{
     width: 200px;
     cursor: pointer;
     border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 15px black;
+    transition: 0.3s;   
 }
 button:hover{
-    background-color: greenyellow;
+    background-color: #FFC300;
 
 }
 
