@@ -9,7 +9,7 @@
 }
 main{
     background-color:#7E69AC;
-    height: 900px;
+    height: 2900px;
     width: 100%;
 }
 footer{
@@ -17,10 +17,11 @@ footer{
     height: 230px;
     width: 100%;
 }
-h1{
+#titulo{
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #504074;
+    font-size: 40px;
 }
 h2{
     font-family:'Times New Roman', Times, serif;
@@ -68,10 +69,29 @@ p{
 }
 
 #carrinho{
-    height: 40px;
+    height: 60px;
+    width: 60px;
+    opacity: 0.5;
+    margin-top: 20px;
+    display:flex;
+    float: right;
+    background-color: #504074;
+    border: none;
+    cursor: pointer;
+    margin-right: 15px;
+    
+
+    /*height: 40px;
     float: right;
     margin-right: 10px;
     margin-top: 25px;
+    /*/
+}
+#car{
+    width: 60px;
+    height: 60px;
+    
+
 }
 #vcs{
     width: 300px;
@@ -101,12 +121,69 @@ p{
     
     transition: 1s;
 }
-button{
+.cartab{
+    width: 400px;
+    background-color: #555;
+    color: white;
+    position: fixed;
+    inset:  0 -400px 0 auto;
+    display: grid;
+    grid-template-rows:  70px 1fr 70px;
+
+}
+body.mostrar .cartab{
+    inset: 0 0 0 auto;
+}
+.cartab h1{
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+.cartab .btn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.cartab .btn button{
+    background-color: #FFC300;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+.cartab .btn .close{
+   background-color: white; 
+}
+.cartab .listCart .item img{
+    width: 100%;
+}
+.cartab .listCart .item{
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+.listCart .quantidade span{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    color: #555;
+    border: radius 50%; ;
+    cursor: pointer;
+}
+.listCart .quantidade span:nth-child(2){
+    background-color: transparent;
+    color:#eee
+}
+.listCart{
+    overflow: auto;
+}
+.add{
     margin-left: 20px;
     margin-top: 10px;
     height: 40px;
     width: 200px;
-    cursor: pointer;
+    cursor:pointer;
     border-radius: 10px;
     border: none;
     box-shadow: 0 4px 15px black;
