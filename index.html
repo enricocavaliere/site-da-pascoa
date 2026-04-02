@@ -71,7 +71,7 @@
             <button class="add">Adicionar ao carrinho</button>
         </div>
 
-        <div class="cartab">
+        <div id="cartab" class="cartab ocultar">
         <h1>CARRINHO</h1>
           <div class="listCart">
             <div class="item">
@@ -84,16 +84,20 @@
                 <div class="precoTotal">
                     R$199
                 </div>
-                <div class="quantidade">
-                    <span class="menos">-</span>
-                    <span>1</span>
-                    <span class="mais">+</span>
+                <div id="quantidade">
+                    <button class="menos">
+                        -
+                    </button>
+                    <span id="valor">0</span>
+                    <button class="mais">
+                        +
+                    </button>
                 </div>
             </div>
 
           </div>
          <div class="btn">
-            <button class="close">Fechar</button>
+            <button id="fechar" class="close">Fechar</button>
             <button class="pagamento">Pagamento</button>
          </div>
         </div>
@@ -109,7 +113,7 @@
         <li><a href="">Seja um Franqueado</a></li>
         <li><a href="">Área para Empresas</a></li>
         <li><a href="">Trabalhe Conosco</a></li>
-        <li><a href="">Barras de chocolate</a></li>
+        <li><a href="">Barras de choco  late</a></li>
         <li><a href="">Nossas Marcas</a></li>
         <li><a href="">Linha Milka Home</a></li>
         </ul>
