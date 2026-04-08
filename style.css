@@ -218,5 +218,15 @@ button:hover{
     background-color: #FFC300;
 
 }
+.pay{
+    width: 400px;
+    background-color:#eee;
+    color: black;
+    position: fixed;
+    inset:  0 -400px 0 auto;
+    display: grid;
+    grid-template-rows:  70px 1fr 70px;
+    border-radius: 3%;
+}
 
 

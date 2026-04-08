@@ -1,7 +1,9 @@
 
+let carrinhoCompra = Array();
+
 let carrinhoBtn = document.getElementById('carrinho');
 let closeBtn = document.getElementById('fechar');
-let pagamentoBtn = document.getElementById('pagamento')
+let pagamentoBtn = document.getElementById('pay')
 let cartab = document.getElementById('cartab');
 
 carrinhoBtn.addEventListener('click', () => {
@@ -13,11 +15,11 @@ closeBtn.addEventListener('click', () => {
     cartab.classList.remove('mostrar');
     cartab.classList.add('ocultar');
 });
-/*/
+
 pagamentoBtn.addEventListener('click', () => {
     cartab.classList.remove('mostrar');
-    cartab.classList.add('pagamento');
-})/*/
+    cartab.classList.add('pay');
+})
 
 const valorDisplay = document.getElementById('valor');
 const maisButton = document.getElementById('mais');
@@ -26,10 +28,11 @@ const precoTotal = document.querySelector('.precoTotal');
 const nomeCarrinho = document.querySelector('.nome');
 const imgCarrinho = document.querySelector('.imgs img');
 
-
+/*/
 let quantidade = 0;
-let precoUnitario = 0;
+let precoUnitario = 1;
 let intervalId = null;
+/*/
 
 //ARRAY
 const produtos = [
@@ -74,18 +77,67 @@ const produtos = [
     },
 ];
 
+let caixaProduto = '';
+let contador = 0;
+let ListaProdutos = document.getElementById("ListaProdutos");
+produtos.forEach(element => {
+    caixaProduto = caixaProduto + `<div id="chocLeite" class="caixa">
+                                        <img id="ftOvo" src="./${element.img}" alt="" srcset="">
+                                        <h2 id="chocLeite">${element.nome}</h2>
+                                        <p class="preco">R$ ${element.preco}</p>
+                                        <button class="add" value="${contador}">Adicionar ao carrinho</button>    
+                                    </div>`;
+    contador++;
+});
+ListaProdutos.innerHTML = caixaProduto;
 
 const updateCarrinhoUI = () => {
     if (quantidade < 0) quantidade = 0;
-    valorDisplay.innerHTML = quantidade;
-    let total = quantidade * precoUnitario;
-    precoTotal.innerHTML = `R$ ${total.toFixed(2).replace('.', ',')}`;
+    if( quantidade == 0){
+
+    }else{
+        valorDisplay.innerHTML = quantidade;
+        let total = quantidade * precoUnitario;
+        precoTotal.innerHTML = `R$ ${total.toFixed(2).replace('.', ',')}`;
+
+        let caixaCarrinho = '';
+
+        carrinhoCompra.forEach(element => {
+    caixaCarrinho = caixaCarrinho + `div class="item">
+                                        <div class="imgs">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="nome">
+                                            ${element.nome}
+                                        </div>
+                                        <div class="precoTotal">
+                                            R$
+                                            ${element.preco}
+                                        </div>
+                                        <div id="quantidade">
+                                            <button class="botao" id="menos">
+                                                -
+                                            </button>
+                                            <span id="valor">${contador}</span>
+                                            <button class="botao" id="mais">
+                                                +
+                                            </button>
+                                        </div>
+                                    </div>
+`;
+    contador++;
+});
+    }
 };
 
 const botoesAdicionar = document.querySelectorAll('.add');
 
 botoesAdicionar.forEach((botao, index) => {
     botao.addEventListener('click', () => {
+
+        carrinhoCompra.push(botao.getAttribute("value"));
+        console.log(carrinhoCompra);
+        console.log(produtos[carrinhoCompra[1]]);
 
         const produtoSelecionado = produtos[index];
 
