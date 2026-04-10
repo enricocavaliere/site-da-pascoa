@@ -2,6 +2,9 @@
     margin: 0%;
     padding: 0%;    
 }
+#botao{
+    position: sticky;
+}
 #image{  
     background-color: #504074;
     padding-bottom: 50px;
@@ -22,6 +25,9 @@ footer{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #504074;
     font-size: 40px;
+}
+h1{
+    color: white;
 }
 h2{
     font-family:'Times New Roman', Times, serif;
@@ -57,6 +63,9 @@ p{
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
     
+}
+.nome{
+    color: white;
 }
 #pesquisa{
     height: 50px;
@@ -126,13 +135,15 @@ p{
 }
 .cartab{
     width: 400px;
-    background-color:#eee;
-    color: black;
+    background-color:#504074;
+    color: white;
     position: fixed;
     inset:  0 -400px 0 auto;
     display: grid;
     grid-template-rows:  70px 1fr 70px;
     border-radius: 3%;
+    justify-content: space-between;
+    overflow-y: auto;
     
 }
 .mostrar{
@@ -160,11 +171,13 @@ body .cartab{
     cursor: pointer;
     position:relative;
     height: 80px;
-    top: 470px;
+    margin-top: auto;
+    gap: 12px;
 }
 .cartab .btn .close{
    background-color: #eee; 
 }
+
 .cartab .listCart .item img{
     width: 100%;
     height: 70px;
@@ -198,7 +211,7 @@ body .cartab{
 }
 .listCart .quantidade span:nth-child(2){
     background-color: transparent;
-    color:black
+    color:white
 }
 .listCart{
     overflow: auto;
@@ -220,13 +233,39 @@ button:hover{
 }
 .pay{
     width: 400px;
-    background-color:#eee;
-    color: black;
+    background-color:#504074;
+    color: white;
     position: fixed;
     inset:  0 -400px 0 auto;
     display: grid;
     grid-template-rows:  70px 1fr 70px;
     border-radius: 3%;
+}
+.precoTotal{
+    color: white;
+}
+.pagamento-container {
+    padding: 20px;
+    text-align: left;
+}
+
+.total-final {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: #4b2d89; /* Cor roxa da Milka */
+}
+
+.opcoes-pagamento {
+    margin: 15px 0;
+    line-height: 2;
+}
+
+.botao-voltar {
+    background-color: #ccc;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
 
