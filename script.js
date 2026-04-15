@@ -23,7 +23,7 @@ pagamentoBtn.addEventListener('click', () => {
     cartab.classList.remove('pay');
 });
 
-// ARRAY DE PRODUTOS
+// ARRAY
 const produtos = [
     { nome: "Ovo de páscoa Chocolate ao leite", preco: 199, img: "./leite.webp" },
     { nome: "Ovo de páscoa Oreo", preco: 259, img: "ovo milka.jpg" },
@@ -35,7 +35,6 @@ const produtos = [
     { nome: "Ovo de páscoa Morango", preco: 150, img: "morango.png" },
 ];
 
-// RENDERIZAR VITRINE
 let ListaProdutos = document.getElementById("ListaProdutos");
 let caixaProduto = '';
 produtos.forEach((element, index) => {
@@ -51,7 +50,7 @@ ListaProdutos.innerHTML = caixaProduto;
 // FUNÇÃO PARA ATUALIZAR A INTERFACE DO CARRINHO
 const updateCarrinhoUI = () => {
     let listCart = document.querySelector('.listCart');
-    listCart.innerHTML = ''; // Limpa o HTML atual para reconstruir com a lista nova
+    listCart.innerHTML = ''; 
 
     if (carrinhoCompra.length === 0) {
         listCart.innerHTML = '<div class="item"><div class="nome">SEU CARRINHO ESTÁ VAZIO</div></div>';
@@ -90,13 +89,13 @@ botoesAdicionar.forEach((botao) => {
         const idProduto = botao.getAttribute("value");
         const produtoSelecionado = produtos[idProduto];
 
-        // Verifica se o produto já existe no carrinho
+     
         const itemExistente = carrinhoCompra.find(item => item.nome === produtoSelecionado.nome);
 
         if (itemExistente) {
             itemExistente.quantidade++;
         } else {
-            // Adiciona novo objeto ao array
+        
             carrinhoCompra.push({
                 nome: produtoSelecionado.nome,
                 preco: produtoSelecionado.preco,
@@ -112,18 +111,18 @@ botoesAdicionar.forEach((botao) => {
 });
 
 
-// FUNÇÃO PARA BOTÕES DE + E - DENTRO DO CARRINHO
+
 window.alterarQuantidade = (index, valor) => {
     carrinhoCompra[index].quantidade += valor;
     
-    // Se a quantidade chegar a 0, removemos o item da lista
+    
     if (carrinhoCompra[index].quantidade <= 0) {
         carrinhoCompra.splice(index, 1);
     }
     
     updateCarrinhoUI();
 };
-
+//PARTE DO PAGAMENTO
 pagamentoBtn.addEventListener('click', () => {
     if (carrinhoCompra.length === 0) {
         alert("Seu carrinho está vazio!");
@@ -132,10 +131,10 @@ pagamentoBtn.addEventListener('click', () => {
 
     let listCart = document.querySelector('.listCart');
     
-    // Calcula o valor total de todos os itens
+   
     const totalGeral = carrinhoCompra.reduce((soma, item) => soma + (item.preco * item.quantidade), 0);
 
-    // Substitui a lista de produtos pelas opções de pagamento
+   
     listCart.innerHTML = `
         <div style="padding: 20px; text-align: center;">
             <h2>Finalizar Compra</h2>
@@ -154,12 +153,12 @@ pagamentoBtn.addEventListener('click', () => {
     `;
 });
 
-// Função para o botão final de confirmação
+
 window.confirmarPedido = () => {
     const selecionado = document.querySelector('input[name="metodo"]:checked');
     if (selecionado) {
         alert("Pedido confirmado via " + selecionado.value + "! Obrigado pela compra.");
-        carrinhoCompra = []; // Limpa o carrinho
+        carrinhoCompra = []; 
         updateCarrinhoUI();
         cartab.classList.add('ocultar');
     } else {
